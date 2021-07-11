@@ -60,6 +60,7 @@ function displayInput() {
 }
 function getRandomComic() {
     if (data.length == 0) {
+        currentObject = -1;
         document.getElementById('picture').src = "https://images.eurogamer.net/2020/articles/2020-05-29-11-37/five-of-the-best-game-over-screens-1590748640300.jpg/EG11/resize/1200x-1/five-of-the-best-game-over-screens-1590748640300.jpg"
     }
     document.getElementById("input").innerHTML = document.getElementById("name").value
@@ -80,7 +81,10 @@ function check() {
         else if (currentObject.country == text[i] || currentObject.year == text[i] || currentObject.maincharacter == text[i] || currentObject.author == text[i] ) {
             currentPoints++
         }
-    } 
+    }
+    if (currentPoints > 0) {
+        // here gabby
+    }
     updatePoints(currentPoints)
 } 
 </script>
