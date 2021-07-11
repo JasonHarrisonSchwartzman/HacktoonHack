@@ -38,16 +38,16 @@ body {
 </style>
 <script type = "text/javascript">
 var points = 0
-var currentObject = {"name":"Archie", "country":"America", "year": 1939, "maincharacter":"Archie","author":"idk"}
+var currentObject = {"name":"peanuts", "country":"america", "year": 150, "maincharacter":"charlie brown","author":"charles schulz"}
 function updatePoints(number) {
     points+= number;
     document.getElementById("points").innerHTML = points
 }
 const data = [
 
-        {"picture":"https://edtimes.in/wp-content/uploads/2017/11/mZnKY.jpg", "name":"Archie", "country":"America", "year": 1939, "maincharacter":"Archie","author":"idk"},
-        {"picture":"https://qph.fs.quoracdn.net/main-qimg-1b9a87223e4008a3baa2950af5c0dea3", "name":"Garfield", "country":"America", "year": 1978, "maincharacter":"Garfield", "author":"Jim Davis"},
-        {"picture":"https://bleedingcool.com/wp-content/uploads/2018/04/SM840722_Sunday-1200x675.jpg","name":"The Amazing Spiderman", "country":"America", "year": 1977, "maincharacter":"Spiderman", "author":"Stan Lee"}
+        {"picture":"https://edtimes.in/wp-content/uploads/2017/11/mZnKY.jpg", "name":"archie", "country":"america", "year": 1939, "maincharacter":"archie","author":"idk"},
+        {"picture":"https://qph.fs.quoracdn.net/main-qimg-1b9a87223e4008a3baa2950af5c0dea3", "name":"garfield", "country":"america", "year": 1978, "maincharacter":"garfield", "author":"jim davis"},
+        {"picture":"https://bleedingcool.com/wp-content/uploads/2018/04/SM840722_Sunday-1200x675.jpg","name":"the amazing spiderman", "country":"america", "year": 1977, "maincharacter":"spiderman", "author":"stan lee"}
 ]
 function arrayRemove(arr, value) { 
     
@@ -74,8 +74,9 @@ function check() {
     var text = document.getElementById("name").value.split(' ');
     var currentPoints = 0;
     for (let i = 0; i < text.length; i++) {
+        text[i] = text[i].toLowerCase()
         if (currentObject.name == text[i]) {
-          currentPoints+= 2
+          currentPoints = currentPoints + 2
         }
         else if (currentObject.country == text[i] || currentObject.year == text[i] || currentObject.maincharacter == text[i] || currentObject.author == text[i] ) {
             currentPoints++
