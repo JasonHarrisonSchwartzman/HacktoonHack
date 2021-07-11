@@ -62,13 +62,12 @@ function getRandomComic() {
     if (data.length == 0) {
         document.getElementById('picture').src = "https://images.eurogamer.net/2020/articles/2020-05-29-11-37/five-of-the-best-game-over-screens-1590748640300.jpg/EG11/resize/1200x-1/five-of-the-best-game-over-screens-1590748640300.jpg"
     }
-    //document.getElementById("input").innerHTML = document.getElementById("name").value
+    document.getElementById("input").innerHTML = document.getElementById("name").value
     const random = Math.floor(Math.random() * data.length)
     const randomObject = data[random]
-    currentObject = data[random]
+    currentObject = randomObject
     document.getElementById('picture').src = randomObject.picture
     data.splice(random, 1)
-    check()
 }
 function check() {
     var text = document.getElementById("name").value.split(' ');
@@ -93,7 +92,7 @@ function check() {
 
 <img id="picture" src = "https://i.redd.it/lnqivjfeums11.jpg" width:"200" height="400" class="center"> <br>
 Answer: <input type="text" id ="name" name="name">
-<input type="submit" onclick="getRandomComic(); displayInput();">
+<input type="submit" onclick="check(); getRandomComic(); displayInput();">
 
 <button type="button" onclick="getRandomComic()">Picture</button>
 
