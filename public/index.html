@@ -55,15 +55,11 @@ function arrayRemove(arr, value) {
             return ele != value; 
         });
     }
-function displayInput() {
-   document.getElementById("input").innerHTML = document.getElementById("name").value
-}
 function getRandomComic() {
     if (data.length == 0) {
         currentObject = -1;
         document.getElementById('picture').src = "https://images.eurogamer.net/2020/articles/2020-05-29-11-37/five-of-the-best-game-over-screens-1590748640300.jpg/EG11/resize/1200x-1/five-of-the-best-game-over-screens-1590748640300.jpg"
     }
-    document.getElementById("input").innerHTML = document.getElementById("name").value
     const random = Math.floor(Math.random() * data.length)
     const randomObject = data[random]
     currentObject = randomObject
@@ -97,15 +93,8 @@ function check() {
 
 <img id="picture" src = "https://i.redd.it/lnqivjfeums11.jpg" width:"200" height="400" class="center"> <br>
 Answer: <input type="text" id ="name" name="name">
-<input type="submit" onclick="check(); getRandomComic(); displayInput();">
+<input type="submit" onclick="check(); getRandomComic();">
 
-<button type="button" onclick="getRandomComic()">Picture</button>
-
-<script>
-    if (data.length == 0) {
-        document.getElementById('picture').src = "https://images.eurogamer.net/2020/articles/2020-05-29-11-37/five-of-the-best-game-over-screens-1590748640300.jpg/EG11/resize/1200x-1/five-of-the-best-game-over-screens-1590748640300.jpg"
-    }
-</script>
 </div>
 <div class="split right">
 <h1>Points:</h1>
