@@ -49,12 +49,6 @@ const data = [
         {"picture":"https://qph.fs.quoracdn.net/main-qimg-1b9a87223e4008a3baa2950af5c0dea3", "name":"garfield", "country":"america", "year": 1978, "maincharacter":"garfield", "author":"jim davis"},
         {"picture":"https://bleedingcool.com/wp-content/uploads/2018/04/SM840722_Sunday-1200x675.jpg","name":"the amazing spiderman", "country":"america", "year": 1977, "maincharacter":"spiderman", "author":"stan lee"}
 ]
-function arrayRemove(arr, value) { 
-    
-        return arr.filter(function(ele){ 
-            return ele != value; 
-        });
-    }
 function getRandomComic() {
     if (data.length == 0) {
         currentObject = -1;
@@ -67,6 +61,7 @@ function getRandomComic() {
     data.splice(random, 1)
 }
 function check() {
+    document.getElementById("input").innerHTML = document.getElementById("name").value
     var text = document.getElementById("name").value.split(' ');
     var currentPoints = 0;
     for (let i = 0; i < text.length; i++) {
