@@ -30,14 +30,14 @@ body {
 </style>
 <script type = "text/javascript">
 var points = 0
-var currentObject;
+var currentObject = {"name":"Archie", "country":"America", "year": 1939, "maincharacter":"Archie","author":"idk"}
 function updatePoints(number) {
     points+= number;
     document.getElementById("points").innerHTML = points
 }
 const data = [
 
-        {"picture":"https://edtimes.in/wp-content/uploads/2017/11/mZnKY.jpg", "name":"Archie", "country":"America", "year": 1939, "maincharacter":"Archie"},
+        {"picture":"https://edtimes.in/wp-content/uploads/2017/11/mZnKY.jpg", "name":"Archie", "country":"America", "year": 1939, "maincharacter":"Archie","author":"idk"},
         {"picture":"https://qph.fs.quoracdn.net/main-qimg-1b9a87223e4008a3baa2950af5c0dea3", "name":"Garfield", "country":"America", "year": 1978, "maincharacter":"Garfield", "author":"Jim Davis"},
         {"picture":"https://bleedingcool.com/wp-content/uploads/2018/04/SM840722_Sunday-1200x675.jpg","name":"The Amazing Spiderman", "country":"America", "year": 1977, "maincharacter":"Spiderman", "author":"Stan Lee"}
 ]
@@ -57,10 +57,24 @@ function getRandomComic() {
     //document.getElementById("input").innerHTML = document.getElementById("name").value
     const random = Math.floor(Math.random() * data.length)
     const randomObject = data[random]
-    currentObject = data[random]
+    //currentObject = data[random]
     document.getElementById('picture').src = randomObject.picture
     data.splice(random, 1)
+    check()
 }
+function check() {
+    var text = document.getElementById("name").value.split(' ');
+    var currentPoints = 0;
+    for (let i = 0; i < text.length; i++) {
+        if (currentObject.name == text[i]) {
+          currentPoints+= 2
+        }
+        else if (currentObject.country == text[i] || currentObject.year == text[i] || currentObject.maincharacter == text[i] || currentObject.author == text[i] ) {
+            currentPoints++
+        }
+    } 
+    updatePoints(currentPoints)
+} 
 </script>
 <title>Comic Quiz</title>
 </head>
@@ -70,7 +84,7 @@ function getRandomComic() {
 
 <img id="picture" src = "https://i.redd.it/lnqivjfeums11.jpg" width:"200" height="400" class="center"> <br>
 Answer: <input type="text" id ="name" name="name">
-<input type="submit" onclick="displayInput()" onclick="getRandomComic()">
+<input type="submit" onclick="getRandomComic(); displayInput();">
 
 <button type="button" onclick="getRandomComic()">Picture</button>
 
