@@ -2,6 +2,7 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="https://cdn3.iconfinder.com/data/icons/pop-art/130/25-512.png">
 <style>
 body {
   font-family: Arial;
@@ -88,7 +89,7 @@ function check() {
 
 <img id="picture" src = "https://i.redd.it/lnqivjfeums11.jpg" width:"200" height="400" class="center"> <br>
 Answer: <input type="text" id ="name" name="name">
-<input type="submit" onclick="check(); getRandomComic();">
+<input class="button" type="submit" onclick="check(); getRandomComic();">
 
 </div>
 <div class="split right">
@@ -96,13 +97,13 @@ Answer: <input type="text" id ="name" name="name">
 <h2 id="points"></h2>
 
 <script>
-    document.getElementById("points").innerHTML = points
+    document.getElementById("points").innerHTML = points;
 </script>
 <p>Input:</p>
 <p id = "input"></p>
 <script>
 function displayInput() {
-   document.getElementById("input").innerHTML = document.getElementById("name").value
+   document.getElementById("input").innerHTML = document.getElementById("name").value;
 }
 </script>
 </div>
