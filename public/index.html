@@ -1,12 +1,99 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Page Title</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  font-family: Arial;
+  color: white;
+}
+
+.split {
+  height: 100%;
+  width: 50%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+.left {
+  left: 0;
+  background-color: black;
+}
+
+.right {
+  right: 0;
+  background-color: green;
+}
+</style>
+<script type = "text/javascript">
+var points = 0
+var currentObject;
+function updatePoints(number) {
+    points+= number;
+    document.getElementById("points").innerHTML = points
+}
+const data = [
+
+        {"picture":"https://edtimes.in/wp-content/uploads/2017/11/mZnKY.jpg", "name":"Archie", "country":"America", "year": 1939, "maincharacter":"Archie"},
+        {"picture":"https://qph.fs.quoracdn.net/main-qimg-1b9a87223e4008a3baa2950af5c0dea3", "name":"Garfield", "country":"America", "year": 1978, "maincharacter":"Garfield", "author":"Jim Davis"},
+        {"picture":"https://bleedingcool.com/wp-content/uploads/2018/04/SM840722_Sunday-1200x675.jpg","name":"The Amazing Spiderman", "country":"America", "year": 1977, "maincharacter":"Spiderman", "author":"Stan Lee"}
+]
+function arrayRemove(arr, value) { 
+    
+        return arr.filter(function(ele){ 
+            return ele != value; 
+        });
+    }
+function displayInput() {
+   document.getElementById("input").innerHTML = document.getElementById("name").value
+}
+function getRandomComic() {
+    if (data.length == 0) {
+        document.getElementById('picture').src = "https://images.eurogamer.net/2020/articles/2020-05-29-11-37/five-of-the-best-game-over-screens-1590748640300.jpg/EG11/resize/1200x-1/five-of-the-best-game-over-screens-1590748640300.jpg"
+    }
+    //document.getElementById("input").innerHTML = document.getElementById("name").value
+    const random = Math.floor(Math.random() * data.length)
+    const randomObject = data[random]
+    currentObject = data[random]
+    document.getElementById('picture').src = randomObject.picture
+    data.splice(random, 1)
+}
+</script>
+<title>Comic Quiz</title>
 </head>
+<div class = "split left">
 <body>
+<h1>Comics</h1>
 
-<h1>This is a Heading</h1>
-<p>This is a paragraph.</p>
+<img id="picture" src = "https://i.redd.it/lnqivjfeums11.jpg" width:"200" height="400" class="center"> <br>
+Answer: <input type="text" id ="name" name="name">
+<input type="submit" onclick="displayInput()" onclick="getRandomComic()">
 
+<button type="button" onclick="getRandomComic()">Picture</button>
+
+<script>
+    if (data.length == 0) {
+        document.getElementById('picture').src = "https://images.eurogamer.net/2020/articles/2020-05-29-11-37/five-of-the-best-game-over-screens-1590748640300.jpg/EG11/resize/1200x-1/five-of-the-best-game-over-screens-1590748640300.jpg"
+    }
+</script>
+</div>
+<div class="split right">
+<h1>Points:</h1>
+<h2 id="points"></h2>
+
+<script>
+    document.getElementById("points").innerHTML = points
+</script>
+<p>Input:</p>
+<p id = "input"></p>
+<script>
+function displayInput() {
+   document.getElementById("input").innerHTML = document.getElementById("name").value
+}
+</script>
+</div>
 </body>
 </html>

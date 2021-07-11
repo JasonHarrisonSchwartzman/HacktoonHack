@@ -1,8 +1,8 @@
 {
--Wallace the Brave
--Peanuts
--Garfield
--Blonde
--Popeye
--Beetle Bailey
+    "https://edtimes.in/wp-content/uploads/2017/11/mZnKY.jpg":
+        {"name":"Archie", "country":"America", "year": 1939, "maincharacter":"Archie"},
+    "https://qph.fs.quoracdn.net/main-qimg-1b9a87223e4008a3baa2950af5c0dea3":
+        {"name":"Garfield", "country":"America", "year": 1978, "maincharacter":"Garfield", "author":"Jim Davis"},
+    "https://bleedingcool.com/wp-content/uploads/2018/04/SM840722_Sunday-1200x675.jpg":
+        {"name":"The Amazing Spiderman", "country":"America", "year": 1977, "maincharacter":"Spiderman", "author":"Stan Lee"} 
 }
