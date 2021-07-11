@@ -65,7 +65,7 @@ function getRandomComic() {
     //document.getElementById("input").innerHTML = document.getElementById("name").value
     const random = Math.floor(Math.random() * data.length)
     const randomObject = data[random]
-    //currentObject = data[random]
+    currentObject = data[random]
     document.getElementById('picture').src = randomObject.picture
     data.splice(random, 1)
     check()
@@ -76,7 +76,7 @@ function check() {
     for (let i = 0; i < text.length; i++) {
         text[i] = text[i].toLowerCase()
         if (currentObject.name == text[i]) {
-          currentPoints = currentPoints + 2
+            currentPoints = currentPoints + 2
         }
         else if (currentObject.country == text[i] || currentObject.year == text[i] || currentObject.maincharacter == text[i] || currentObject.author == text[i] ) {
             currentPoints++
